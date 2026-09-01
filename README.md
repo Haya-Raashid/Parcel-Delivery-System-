@@ -1,51 +1,58 @@
 # Parcel Delivery System
 
 ## Overview
-The Parcel Delivery project reads a real-world-style dataset of 1,180 package records from a CSV
-file, storing and indexing them in multiple data structures simultaneously to serve different 
-operational needs: fast lookup, ordered traversal, dispatch queuing, workload analysis, 
-and shortest-path route optimisation. 
+
+The Parcel Delivery System is a C++ project that reads a dataset of 1,180 package records from CSV files and manages the data using multiple data structures. Each data structure is used to address a different operational requirement, including package management, efficient lookup, dispatch processing, workload analysis, and shortest-path route optimization.
 
 ## Features
-1. Load and persist parcel data from a structured CSV file. 
-2. Maintain a doubly linked list for full traversal and deletion.
-3. Implements a queue for package processing.
-4. Use an AVL tree to rank delivery areas by parcel volume.
-5. Uses a hash table for efficient package/area lookup.
-6. Implement a FIFO dispatch queue for orderly parcel processing. 
-7. Apply Dijkstra’s algorithm to find optimised multi-city delivery routes.
-8. 
+
+- Load and process parcel data from structured CSV files
+- Maintain a doubly linked list for package storage, traversal, and deletion
+- Implement a queue for orderly package processing
+- Use a Binary Search Tree (BST) to organize delivery areas
+- Use an AVL tree to maintain balanced delivery-area data and analyze parcel volume
+- Implement a hash table for efficient package and area lookup
+- Represent connections between cities using a graph
+- Apply Dijkstra's algorithm to find optimized delivery routes between cities
+
 ## Data Structures and Algorithms
+
 The project implements the following data structures and algorithms:
 
-| Data Structure          | Purpose                                       |
----------------------------------------------------------------------------
-| Doubly Linked List      | Stores and manages package records            |
-| Queue                   | Processes packages in order                   |
-| Binary Search Tree (BST)| Organizes delivery areas                      |
-| AVL Tree                | Maintains balanced area data                  |
-| Hash Table              | Provides efficient lookup                     |
-| Graph                   | Represents connections between delivery areas |
-| Dijkstra's Algorithm    | Finds shortest paths between locations        |
+| Data Structure / Algorithm | Purpose |
+|---|---|
+| Doubly Linked List | Stores and manages package records |
+| Queue | Processes packages in FIFO order |
+| Binary Search Tree (BST) | Organizes delivery areas |
+| AVL Tree | Maintains balanced delivery-area data |
+| Hash Table | Provides efficient package and area lookup |
+| Graph | Represents connections and distances between cities |
+| Dijkstra's Algorithm | Finds shortest delivery routes between cities |
 
 ## Technologies Used
-1- C++
-2- File Handling
-3- CSV Data
-4- Data Structures
-5- Graph(Dijkstra) Algorithms
+
+- C++
+- File Handling
+- CSV Data Processing
+- Data Structures
+- Graph Algorithms
+- Dijkstra's Algorithm
 
 ## Dataset
-1- package_csv: The project uses a CSV dataset containing package delivery records. 
-Each package contains information such as its ID, destination, weight, and priority.
-The dataset is read from a CSV file when the program runs.
-2- Distances-csv: This csv is used to map distances between cities, that are used by 
-the Graph as well as the Dijsktra Algorithm.
+
+The project uses two CSV files:
+
+- **package_dataset_1180_entries.csv:** Contains 1,180 package delivery records. Each package includes information such as its ID, destination, weight, and priority.
+
+- **Distances.csv:** Contains distance information between cities. This data is used to construct the graph and calculate shortest delivery routes using Dijkstra's algorithm.
 
 ## Learning Outcomes
+
 Through this project, I practiced:
-1- Implementing data structures from scratch in C++
-2- Working with linked lists, queues, trees, hash tables, and graphs
-3- Implementing AVL tree rotations and balancing
-4- Working with multiple CSV file input
-5- Applying graph algorithms to a practical problem
+
+- Implementing data structures from scratch in C++
+- Working with doubly linked lists, queues, trees, hash tables, and graphs
+- Implementing AVL tree rotations and balancing
+- Working with multiple CSV file inputs
+- Applying graph algorithms to a practical delivery problem
+- Combining multiple data structures to solve different aspects of a larger system
